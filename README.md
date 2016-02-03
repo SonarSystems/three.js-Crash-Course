@@ -6,6 +6,7 @@ Video tutorials:
   <li>Draw Geometry - coming soon</li>
   <li>Update Viewport On Resize - coming soon</li>
   <li>Controls - coming soon</li>
+  <li>Textures - coming soon</li>
   <li>Lighting - coming soon</li>
   <li>Model Loading - coming soon</li>
   <li>Collision Detection - coming soon</li>
