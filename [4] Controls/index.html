@@ -20,14 +20,14 @@
 			// check when the browser size has changed and adjust the camera accordingly
 			window.addEventListener( 'resize', function( )
 			{
-      	var WIDTH = window.innerWidth;
+		      	var WIDTH = window.innerWidth;
 				var HEIGHT = window.innerHeight;
-      	renderer.setSize( WIDTH, HEIGHT );
-      	camera.aspect = WIDTH / HEIGHT;
-      	camera.updateProjectionMatrix( );
-    	} );
+		      	renderer.setSize( WIDTH, HEIGHT );
+		      	camera.aspect = WIDTH / HEIGHT;
+		      	camera.updateProjectionMatrix( );
+	    	} );
 
-			controls = new THREE.OrbitControls(camera, renderer.domElement);
+			controls = new THREE.OrbitControls( camera, renderer.domElement );
 
 
 			// create the shape
