@@ -43,12 +43,12 @@
 		var geometry = new THREE.CubeGeometry( 2, 2, 2 );
 		var cubeMaterials =
 		[
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/1.png' ), side: THREE.DoubleSide } ),
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/2.png' ), side: THREE.DoubleSide } ),
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/3.png' ), side: THREE.DoubleSide } ),
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/4.png' ), side: THREE.DoubleSide } ),
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/5.png' ), side: THREE.DoubleSide } ),
-			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/6.png' ), side: THREE.DoubleSide } )
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/1.png' ), side: THREE.DoubleSide } ), // Right side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/2.png' ), side: THREE.DoubleSide } ), // Left side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/3.png' ), side: THREE.DoubleSide } ), // Top side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/4.png' ), side: THREE.DoubleSide } ), // Bottom side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/5.png' ), side: THREE.DoubleSide } ), // Front side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/6.png' ), side: THREE.DoubleSide } ) // Back side
 		];
 
 		// Create a MeshFaceMaterial, which allows the cube to have different materials on each face
