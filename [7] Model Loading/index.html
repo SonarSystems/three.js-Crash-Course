@@ -1,0 +1,90 @@
+<html>
+
+<head>
+	<title>Three.js Tutorial</title>
+	<style>
+		body
+		{
+			margin: 0;
+		}
+
+		canvas
+		{
+			width: 100%;
+			height: 100%
+		}
+	</style>
+</head>
+
+<body>
+	<script src="js/three.js"></script>
+	<script src="js/OrbitControls.js"></script>
+	<script src="js/ObjectLoader.js"></script>
+
+	<script>
+		var scene = new THREE.Scene( );
+		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+		var renderer = new THREE.WebGLRenderer( );
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		document.body.appendChild( renderer.domElement );
+
+		// check when the browser size has changed and adjust the camera accordingly
+		window.addEventListener( 'resize', function( )
+		{
+			var WIDTH = window.innerWidth;
+			var HEIGHT = window.innerHeight;
+			renderer.setSize( WIDTH, HEIGHT );
+			camera.aspect = WIDTH / HEIGHT;
+			camera.updateProjectionMatrix( );
+		} );
+
+		controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+		camera.position.z = 7;
+
+		// instantiate a loader
+		var loader = new THREE.ObjectLoader( );
+
+		// load a resource
+		loader.load
+		(
+			// resource URL
+			'models/Head.json',
+			// Function when resource is loaded
+			function ( object )
+			{
+				scene.add( object );
+			}
+		);
+
+		var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.1 );
+		scene.add( ambientLight );
+
+
+		// game logic
+		var update = function( )
+		{
+
+		};
+
+		// draw scene
+		var render = function( )
+		{
+			renderer.render( scene, camera );
+		};
+
+		// run game loop (update, render, repeat)
+		var GameLoop = function( )
+		{
+			requestAnimationFrame( GameLoop );
+
+			update( );
+			render( );
+		};
+
+		GameLoop( );
+	</script>
+</body>
+
+</html>
