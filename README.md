@@ -1,4 +1,4 @@
-a# Three.js Crash Course
+# Three.js Crash Course
 
 Tutorial List:
 <ol>
