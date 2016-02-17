@@ -1,14 +1,14 @@
-# Three.js Crash Course
+a# Three.js Crash Course
 
-Video tutorials:
+Tutorial List:
 <ol>
-  <li>Setup - coming soon</li>
-  <li>Draw Geometry - coming soon</li>
-  <li>Update Viewport On Resize - coming soon</li>
-  <li>Controls - coming soon</li>
-  <li>Textures/Colours - coming soon</li>
-  <li>Lighting - coming soon</li>
-  <li>Model Loading - coming soon</li>
-  <li>FPS - coming soon</li>
-  <li>Anaglyphic 3D - coming soon</li>
+  <li>Setup</li>
+  <li>Draw Geometry</li>
+  <li>Update Viewport On Resize</li>
+  <li>Controls</li>
+  <li>Textures/Colours</li>
+  <li>Lighting</li>
+  <li>Model Loading</li>
+  <li>FPS</li>
+  <li>Anaglyphic 3D</li>
 </ol>
