@@ -11,4 +11,5 @@ Tutorial List:
   <li>Model Loading</li>
   <li>FPS</li>
   <li>Anaglyphic 3D</li>
+  <li>Skybox</li>
 </ol>
