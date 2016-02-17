@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<title>Three.js Tutorial</title>
+	<style>
+		body
+		{
+			margin: 0;
+		}
+
+		canvas
+		{
+			width: 100%;
+			height: 100%
+		}
+	</style>
+</head>
+
+<body>
+	<script src="js/three.js"></script>
+	<script src="js/OrbitControls.js"></script>
+
+	<script>
+		(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();stats.domElement.style.cssText='position:fixed;left:0;top:0;z-index:10000';document.body.appendChild(stats.domElement);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
+
+		var scene = new THREE.Scene( );
+		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+		var renderer = new THREE.WebGLRenderer( );
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		document.body.appendChild( renderer.domElement );
+
+		// check when the browser size has changed and adjust the camera accordingly
+		window.addEventListener( 'resize', function( )
+		{
+			var WIDTH = window.innerWidth;
+			var HEIGHT = window.innerHeight;
+			renderer.setSize( WIDTH, HEIGHT );
+			camera.aspect = WIDTH / HEIGHT;
+			camera.updateProjectionMatrix( );
+		} );
+
+		controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+		camera.position.z = 7;
+
+		// CUBE
+		var geometry = new THREE.CubeGeometry( 1000, 1000, 1000 );
+		var cubeMaterials =
+		[
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/front.png' ), side: THREE.DoubleSide } ), // Right side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/back.png' ), side: THREE.DoubleSide } ), // Left side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/up.png' ), side: THREE.DoubleSide } ), // Top side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/down.png' ), side: THREE.DoubleSide } ), // Bottom side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/right.png' ), side: THREE.DoubleSide } ), // Front side
+			new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader( ).load( 'img/Skybox/left.png' ), side: THREE.DoubleSide } ) // Back side
+		];
+		// Create a MeshFaceMaterial, which allows the cube to have different materials on each face
+		var cubeMaterial = new THREE.MeshFaceMaterial( cubeMaterials );
+		var cube = new THREE.Mesh( geometry, cubeMaterial );
+		scene.add( cube );
+
+		var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.5 );
+		scene.add( ambientLight );
+
+		var light1 = new THREE.PointLight( 0xff0040, 4, 50 );
+		scene.add( light1 );
+
+		var light2 = new THREE.PointLight( 0x0040ff, 3, 50 );
+		scene.add( light2 );
+
+		var light3 = new THREE.PointLight( 0x80ff80, 4, 50 );
+		scene.add( light3 );
+
+		var directionalLight = new THREE.DirectionalLight( 0xFFFFFF, 1 );
+		directionalLight.position.set( 0, 1, 0 );
+		scene.add( directionalLight );
+
+		var spotLight = new THREE.SpotLight( 0xFF45F6, 25 );
+		spotLight.position.set( 0, 3, 0 );
+		scene.add( spotLight );
+
+		// game logic
+		var update = function( )
+		{
+			var time = Date.now( ) * 0.0005;
+			light1.position.x = Math.sin( time * 0.7 ) * 30;
+			light1.position.y = Math.cos( time * 0.5 ) * 40;
+			light1.position.z = Math.cos( time * 0.3 ) * 30;
+			light2.position.x = Math.cos( time * 0.3 ) * 30;
+			light2.position.y = Math.sin( time * 0.5 ) * 40;
+			light2.position.z = Math.sin( time * 0.7 ) * 30;
+			light3.position.x = Math.sin( time * 0.7 ) * 30;
+			light3.position.y = Math.cos( time * 0.3 ) * 40;
+			light3.position.z = Math.sin( time * 0.5 ) * 30;
+		};
+
+
+		// draw scene
+		var render = function( )
+		{
+			renderer.render( scene, camera );
+		};
+
+		// run game loop (update, render, repeat)
+		var GameLoop = function( )
+		{
+			requestAnimationFrame( GameLoop );
+
+			update( );
+			render( );
+		};
+
+		GameLoop( );
+	</script>
+</body>
+
+</html>
