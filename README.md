@@ -9,7 +9,6 @@ Video tutorials:
   <li>Textures/Colours - coming soon</li>
   <li>Lighting - coming soon</li>
   <li>Model Loading - coming soon</li>
-  <li>Collision Detection - coming soon</li>
   <li>FPS - coming soon</li>
   <li>Anaglyphic 3D - coming soon</li>
 </ol>
