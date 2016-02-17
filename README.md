@@ -1,4 +1,4 @@
-# three.js Crash Course
+# Three.js Crash Course
 
 Video tutorials:
 <ol>
@@ -11,5 +11,5 @@ Video tutorials:
   <li>Model Loading - coming soon</li>
   <li>Collision Detection - coming soon</li>
   <li>FPS - coming soon</li>
-  <li>Stereoscopic 3D - coming soon</li>
+  <li>Anaglyphic 3D - coming soon</li>
 </ol>
